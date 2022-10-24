@@ -1,0 +1,27 @@
+<%- include('../layout/header') %>
+
+
+<section class="vh-100">
+    <div class="container py-5 h-100">
+      <div class="rowotp d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card shadow-2-strong" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+  
+              <h3 class="mb-5">OTP Verification</h3>
+            <form action="/user/send-otp" method="post">
+
+              <div class="form-outline mb-4">
+                <label class="form-label" for="typeEmailX-2">Mobile Number</label>
+                <input type="tel" id="PhoneInput" class="form-control form-control-lg" name="mobile"/>
+                <button class="btn btn-primary btn-lg btn-block mt-3" type="submit">Send otp</button>
+              </div>
+            </form>
+            </div> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  

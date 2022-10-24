@@ -1,0 +1,112 @@
+<%-include ('../layout/header.ejs') %> 
+<%-include('../partials/adminHeader.ejs')  %> 
+ 
+
+
+<body>
+  
+    <!-- Close Top Nav -->
+
+
+    <!-- Header -->
+
+
+   
+    
+
+
+    <div class="btn-group btn-group-toggle" id="selection" data-toggle="buttons" style="margin-left: 26rem;margin-top: 3rem;">
+
+       
+        <label class="btn btn-secondary ">
+            <a href="/admin-order"><button
+                    class="button">New</button></a>
+        </label>
+        <label class="btn btn-secondary">
+            <a href="/admin-order/comfirm"><button
+                    class="button">Confirm</button></a>
+        </label>
+        <label class="btn btn-secondary">
+            <a href="/admin-order/delivered"><button
+                    class="button">Delivered</button></a>
+        </label>
+        <label class="btn btn-secondary">
+            <a href="/admin-order/cancel-order"><button
+                    class="button">Canceled</button></a>
+        </label>
+        <!-- <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option3" autocomplete="off"><a href="/admin-order/pendingorder"><button
+                    class="button">Incomplete Payment</button></a>
+        </label> -->
+    </div>
+    <div>
+         <%= result.orderStatus %> 
+    </div>
+
+
+    <table class="table" id="myTable" style="width:80%;border: 2em,thin; margin-left: 100px;">
+        <thead>
+            <tr>
+                 <th scope="col">Action</th>
+                <th scope="col">Id</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Date</th>
+                <th scope="col">Payment</th>
+                <!-- <th scope="col">Cancel</th> --> 
+                <th scope="col">Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(let i=0;i<result.length;i++){ %>
+                <tr>
+                    <th scope="row">
+                        <%= result[i]._id %>
+                    </th>
+                    <td>₹ <%= result[i].orderBill %>
+                    </td>
+                    <td>
+                        <%= result[i].orderDate
+                        %>
+                    </td>
+                    <td>
+                        <%= result[i].paymentMethod
+                        %>
+                    </td>
+                    <% if(result[i].orderStatus=="New" ){ %>
+                        <td><a href="/admin-order/orderconfirmed?id=<%= result[i]._id  %> "><button type="button"
+                                    class="btn btn-outline-success">Confirm</button></a></td>
+                                    <td><a href="/admin-order/cancelOrder?id=<%= result[i]._id  %> "><button type="button"
+                                        class="btn btn-outline-success">Cancel</button></a></td>
+    
+
+                        <% } else if(result[i].orderStatus=="Confirm"  ) { %>
+
+                            <td><a href="/admin-order/deliverorder?id=<%= result[i]._id  %> "><button type="button"
+                                        class="btn btn-outline-success">delivered</button></a></td>
+                            <% } %> 
+                                <td><a href="/admin-order/view-products?id=<%= result[i]._id  %> "><button type="button"
+                                            class="btn btn-outline-success">View</button></a></td>
+
+                        <% if(result[i].orderStatus == "processing"){ %>
+                            
+                            <td><a href="/admin-order/cancelOrder?id=<%= result[i]._id  %> "><button type="button"
+                                class="btn btn-outline-success">Cancel</button></a></td>
+
+                            <% } %> 
+                </tr>
+                <% } %>
+        </tbody>
+</body>
+
+</html>
+   
+   
+  <script> 
+  $(document).ready( function () { 
+    $('#myTable').DataTable(); 
+  } ); 
+  </script>
+  
+  <%-// include('../layout/footer') %>
+
+  

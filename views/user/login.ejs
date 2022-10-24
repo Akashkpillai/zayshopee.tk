@@ -1,0 +1,78 @@
+
+
+<%- include('../layout/header') %> 
+
+<section class="vh-100">
+  <div class="container py-5 h-100">
+    <div class="row d-flex align-items-center justify-content-center h-100">
+      <div class="col-md-8 col-lg-7 col-xl-6">
+        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.vDBKlBBTL-WaqNsaSAI-_QHaHa%26pid%3DApi&f=1"
+          class="img-fluid" alt="Phone image">
+      </div>
+      <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+        <h1>LOGIN</h1>
+        <form action="/user_login" method="post" class="signin-form">
+         
+          <div class="form-group m-3">
+            <label class="form-control-placeholder" for="email">Email</label>
+                <input type="text" class="form-control" placeholder="email" name="email" required>
+              </div>
+
+              <% if(response.registerErr){%>
+                <p style="color:red;"><%=response.registerErrMsg %></p>
+              <% } %> 
+
+          <!-- Password input -->
+          <div class="form-outline m-3">
+            <input type="password" id="password-field" name="password" class="form-control form-control-lg" />
+            <label class="form-label" for="password">Password</label>
+          </div>
+
+          <% if(response.passErr){%>
+            <p style="color:red;"><%= response.passErrMsg %> </p>
+          <%  } %> 
+
+          <% if(response.blockStatusErr){ %>
+            <p style="color: red;"><%= response.blockStatusErrMsg %>  </p>
+            <% } %> 
+
+            
+          <div class="form-group m-3">
+            <button type="submit" class="form-control btn btn-primary rounded submit mt-3 px-3">Log In</button>
+          </div>
+
+          <div class="d-flex justify-content-around align-items-center mb-4">
+            <!-- Checkbox -->
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
+              <label class="form-check-label" for="form1Example3"> Remember me </label>
+            </div>
+            <a href="#!">Forgot password?</a>
+          </div>
+
+          <!-- Submit button -->
+          <button type="submit"  class="btn btn-primary btn-lg btn-block submit-btn">
+            <a style="color: white; text-decoration: none;" href="/user_signup">Sign up</a>
+            </button>
+
+          <div class="divider d-flex align-items-center my-4">
+            <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
+          </div>
+
+          <a class="btn btn-primary btn-lg btn-block" style="background-color: #3b5998" href="#!"
+            role="button">
+            Continue with Facebook
+          </a>
+          <a  class="btn btn-primary btn-lg btn-block" style="background-color: #55acee" href="/mobile_verification"
+            role="button">
+            Continue with Mobile</a>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+            <%- //include('../layout/footer') %> 
+              
