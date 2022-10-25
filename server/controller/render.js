@@ -214,9 +214,10 @@ exports.login = (req, res) => {
 };
 
 exports.logout = (req, res) => {
-    //console.log("i am here");
-    req.session.destroy();
-    session.userId = null
+    // req.session.destroy();
+    req.session.userId =""
+    req.session.otplogin=""
+    req.session.mobileNumber=""
     res.redirect("user_login");
 };
 

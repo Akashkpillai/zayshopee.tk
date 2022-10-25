@@ -41,7 +41,7 @@
 								</form>
 								
 					        		<td width="10%" class="text-center"><a href="/delete_wishlist<%= result[i]._id %> " class="trash-icon">
-										<i class="far fa-trash-alt"></i>
+										<button class="btn btn-dark" onclick="return  confirm('Are you want to delete?')"><i class="far fa-trash-alt"></i></button>
 									</a>
 								</td>
 					        	</tr>
@@ -54,5 +54,4 @@
 			</div>
 		</div>
 	</div>
-	<%- //
-	include('../layout/footer') %>
+	 <%- include('../layout/footertogglr.ejs') %>

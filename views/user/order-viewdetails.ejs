@@ -50,9 +50,8 @@
                   <div class="d-flex justify-content-between">
                 
                     <div class="border-start h-100"></div>
-                    <% if(docs.orderStatus == "New" || docs.orderStatus == "Con
-                    firm" || docs.orderStatus == "Cancelled" ){  %> 
-                      <button class="btn btn-danger" style="margin-right: auto;"><h5 class="fw-normal mb-0"><a href="/profile/cancelorder?id=<%= docs._id  %> ">Cancel</a></h5></button>
+                    <% if(docs.orderStatus == "New" || docs.orderStatus == "Confirm" || docs.orderStatus == "Cancelled" ){  %> 
+                      <button class="btn btn-danger" onclick="return  confirm('Are you want to Cancel?')" style="margin-right: auto;"><h5 class="fw-normal mb-0"><a style="text-decoration: none;" href="/profile/cancelorder?id=<%= docs._id  %> ">Cancel</a></h5></button>
                       <% } else{ %> 
                         <h4 style="margin-right: auto;">Delivered </h4>
                      <% } %> 
@@ -76,15 +75,17 @@
   
   
   
-  
-  
-  
-  
-    <script src="/public/javascripts/jquery-1.11.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+<script src="https://use.fontawesome.com/2ef9222924.js"></script>
+<script src="/public/javascripts/jquery-1.11.0.min.js"></script>
     <script src="/public/javascripts/jquery-migrate-1.2.1.min.js"></script>
     <script src="/public/javascripts/bootstrap.bundle.min.js"></script>
     <script src="/public/javascripts/templatemo.js"></script>
     <script src="/public/javascripts/custom.js"></script>
+
+  
   </body>
+  </html>
 
    <%- //include('../layout/footer') %>

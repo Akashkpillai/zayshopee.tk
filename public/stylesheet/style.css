@@ -3,7 +3,9 @@
   overflow-x: hidden;
 } */
 
-
+.order-admin{
+  margin-left: -307px;
+}
 
 .divider:after,
 .divider:before {

@@ -42,7 +42,7 @@
                                           <td>
                                               
                                               <form action="/coupen/delete-coupon?id=<%= coupon[i].couponCode %> " method="post">
-                                              <button type="submit" style="border: none; background: none;"><i class="fa-solid fa-trash"></i></td></button>
+                                              <button type="submit"  onclick="return  confirm('Are you want to delete?')" style="border: none; background: none;"><i class="fa-solid fa-trash"></i></td></button>
                                               </form>
                                               </div>
                                       </tr>
@@ -110,4 +110,4 @@
     </script>
     </script>
 
-    <%- include('../layout/footer') %>
+    <%- include('../layout/footertogglr.ejs') %>

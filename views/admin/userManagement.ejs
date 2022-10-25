@@ -44,9 +44,17 @@
         </tr>
         <% }%> 
         <!-- {{/each}} -->
-  </tbody>
-</table>
+      </tbody>
+    </table>
     </div>
 </section>
-<%- include('../layout/footer') %>
+
+<script>
+  $(document).ready(function () {
+    $('#myInput').DataTable({
+        "pageLength": 5
+    });
+  });
+</script>
+<%- include('../layout/footertogglr.ejs') %>
 

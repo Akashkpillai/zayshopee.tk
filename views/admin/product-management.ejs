@@ -12,6 +12,7 @@
               <input style="align-items: flex-end" type="text" id="myInput" class="form-control" onkeyup="myFunction()" placeholder="Search..."/>
             </div>
           </div>
+          
             
           <div class="table-responsive">
             <table id="myTable" class="table table-hover mt-5">
@@ -55,9 +56,10 @@
                             </a>
                             <a href="/admin_panel/delete-product?id=<%= result[i]._id  %> ">
                               <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-                              <span class="material-symbols-outlined">
+                              <span class="material-symbols-outlined"><button class="btn btn-primary"  onclick="return  confirm('Are you want to delete?')">
                                 delete
                                 </span>
+                              </button>
                             </a>
                           </td>
                         </tr>
@@ -102,5 +104,5 @@
     }
     </script>
 
-<%- include('../layout/footer') %>
+<%- include('../layout/footertogglr.ejs') %>
 

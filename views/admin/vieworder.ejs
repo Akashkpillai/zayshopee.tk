@@ -17,7 +17,7 @@
 
     <div class="btn-group btn-group-toggle" id="selection" data-toggle="buttons" style="margin-left: 26rem;margin-top: 3rem;">
 
-       
+       <div class="order-admin d-flex">
         <label class="btn btn-secondary ">
             <a href="/admin-order"><button
                     class="button">New</button></a>
@@ -34,16 +34,14 @@
             <a href="/admin-order/cancel-order"><button
                     class="button">Canceled</button></a>
         </label>
-        <!-- <label class="btn btn-secondary">
-            <input type="radio" name="options" id="option3" autocomplete="off"><a href="/admin-order/pendingorder"><button
-                    class="button">Incomplete Payment</button></a>
-        </label> -->
+
+    </div>
     </div>
     <div>
          <%= result.orderStatus %> 
     </div>
 
-
+<div class="">
     <table class="table" id="myTable" style="width:80%;border: 2em,thin; margin-left: 100px;">
         <thead>
             <tr>
@@ -96,6 +94,7 @@
                 </tr>
                 <% } %>
         </tbody>
+    </div>
 </body>
 
 </html>
@@ -107,6 +106,6 @@
   } ); 
   </script>
   
-  <%-// include('../layout/footer') %>
+  <%- include('../layout/footertogglr.ejs') %>
 
   
