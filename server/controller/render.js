@@ -870,15 +870,6 @@ exports.razorpay = (req, res) => {
     })
 }
 
-// exports.purchase = (req, res) => {
-//     let status = req.session.status
-//     Order.updateOne({_id:status},{$set:{orderStatus:"new"}})
-//     .then(()=>{
-//          // console.log(status);
-//     res.render('user/paymentok')
-//     })
-
-// }
 
 exports.purchase = ((req, res) => {
     const order = req.session.order
@@ -1303,13 +1294,7 @@ exports.canceledOrder = (req, res) => {
     })
 }
 
-// exports.pendingOrder = (req,res)=>{
-//     Order.find({orderStatus:"processing"})
-//     .then((result)=>{
-//         let page = "INCOMPLETE ";
-//         res.render('admin/vieworder',{result})
-//     })
-// }
+
 
 
 // productView
